@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function MainTemplate() {
   return (
@@ -6,16 +7,20 @@ export default function MainTemplate() {
       <header>
         <nav>
           <ol>
-            <li>Menu 1</li>
-            <li>Menu 2</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/counters">Counters</Link>
+            </li>
             <li>Menu 3</li>
           </ol>
         </nav>
       </header>
       <main>
-        <Outlet></Outlet>
+        <Outlet />
       </main>
-      <footer></footer>
+      <footer>@ 2023 - Formation</footer>
     </>
   );
 }
