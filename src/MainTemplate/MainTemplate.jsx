@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import { Link, useLocation } from "react-router-dom";
+import clsx from "clsx";
 
 import "./styles.css";
 
@@ -16,7 +17,7 @@ export default function MainTemplate() {
         <li key={label}>
           <Link
             to={to}
-            className={`menu-item ${to === pathname ? "current" : ""}`}
+            className={clsx("menu-item", { current: to === pathname })}
           >
             {label}
           </Link>
