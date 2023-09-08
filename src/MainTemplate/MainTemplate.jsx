@@ -11,26 +11,24 @@ export default function MainTemplate() {
     { to: "/counters", label: "Counters" },
   ];
 
-  const renderNavItem = () => {
-    return menu.map(({ to, label }) => {
-      return (
-        <li key={label}>
-          <Link
-            to={to}
-            className={clsx("menu-item", { current: to === pathname })}
-          >
-            {label}
-          </Link>
-        </li>
-      );
-    });
-  };
-
   return (
     <>
       <header>
         <nav>
-          <ol>{renderNavItem()}</ol>
+          <ol>
+            {menu.map(({ to, label }) => {
+              return (
+                <li key={label}>
+                  <Link
+                    to={to}
+                    className={clsx("menu-item", { current: to === pathname })}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
         </nav>
       </header>
       <main>
