@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Card as MuiCard } from "@mui/material/styles";
+import { Card as MuiCard } from "@mui/material";
 
 export const Card = styled(MuiCard)({
   maxWidth: 200,
