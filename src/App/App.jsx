@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MainTemplate } from "./MainTemplate";
-import CountersPage from "./counters/CounterPage/CountersPage";
-import { HomePage } from "./home/HomePage";
+import { MainTemplate } from "../MainTemplate";
+import CountersPage from "../counters/CounterPage/CountersPage";
+import { HomePage } from "../home/HomePage";
+
+import "./styles.css";
 
 const router = createBrowserRouter([
   {

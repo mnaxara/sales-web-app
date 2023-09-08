@@ -1,0 +1,17 @@
+footer {
+  background-color: darkslateblue;
+  color: #fff;
+  padding: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+li .current {
+  font-weight: bold;
+}
+
+.menu-item {
+  color: rgb(64, 7, 87);
+}
