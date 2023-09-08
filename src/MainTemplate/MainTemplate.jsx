@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import clsx from "clsx";
 
 import "./styles.css";
+import { Typography } from "@mui/material";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();
@@ -34,7 +35,9 @@ export default function MainTemplate() {
       <main>
         <Outlet />
       </main>
-      <footer>@ 2023 - Formation</footer>
+      <footer>
+        <Typography>@ 2023 - Formation</Typography>
+      </footer>
     </>
   );
 }
