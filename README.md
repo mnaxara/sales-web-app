@@ -45,15 +45,17 @@ yarn commit
 ```
 /src
     /home
+        index.js        #Use as an index file
         HomePage.jsx
+        styles.css
+        HomePage.test.jsx
+        HomePage.stories.jsx
     /product
+        index.js
         Product.jsx
-    /favorites
-        Favorites.jsx
-    /counter
-        Counters.jsx
+        ...
     /hooks
-        index.js #Use as an index file
+        index.js        #Use as an index file
         useCounter.js
 ```
 
