@@ -35,4 +35,18 @@ Commit your changes:
 yarn commit
 ```
 
+## Design
+
+### HomePage
+
+![sales-homepage](.\docs\sales-homepage.drawio.svg)
+
+### Product Slug
+
+![sales-homepage](.\docs\sales-product.drawio.svg)
+
+### Favorites
+
+![sales-homepage](.\docs\sales-favorites.drawio.svg)
+
 Thanks for your service
