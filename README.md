@@ -52,6 +52,9 @@ yarn commit
         Favorites.jsx
     /counter
         Counters.jsx
+    /hooks
+        index.js #Use as an index file
+        useCounter.js
 ```
 
 Thanks for your service
