@@ -43,6 +43,7 @@ export default function MainTemplate() {
                 <Button
                   key={label}
                   component={Link}
+                  variant="text"
                   to={to}
                   current={pathname === to}
                   sx={{ my: 2, color: "white", display: "block" }}
