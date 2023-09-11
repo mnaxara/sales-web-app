@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
+    "dev:api": "json-server --watch db.json --port 3100",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -37,6 +38,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
+    "json-server": "^0.17.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "prettier-plugin-packagejson": "^2.4.5",
