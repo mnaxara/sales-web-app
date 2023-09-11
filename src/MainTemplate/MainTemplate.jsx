@@ -15,7 +15,7 @@ import { Footer, Button } from "./styles";
 export default function MainTemplate() {
   const { pathname } = useLocation();
   const menu = [
-    { to: "/", label: "Home" },
+    { to: "/", label: "Nos Produits" },
     { to: "/counters", label: "Counters" },
   ];
 
