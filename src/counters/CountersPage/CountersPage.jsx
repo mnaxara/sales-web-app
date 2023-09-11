@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import Counter from "../Counter/Counter";
+import { Counter } from "../Counter";
 
 export default function CountersPage() {
   return (

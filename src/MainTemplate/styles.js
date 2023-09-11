@@ -15,8 +15,11 @@ export const Button = styled(MuiButton, {
   shouldForwardProp: (props) => props !== "current",
 })(({ theme, current }) => ({
   margin: `${theme.spacing(2)} 0`,
-  color: "white",
+  color: theme.palette.primary.contrastText,
   display: "flex",
   borderBottom: current ? "1px solid white" : null,
   borderRadius: current ? "0px" : null,
+  "&:hover": {
+    color: "#CCCCCC",
+  },
 }));

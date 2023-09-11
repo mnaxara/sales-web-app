@@ -1,31 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MainTemplate } from "../MainTemplate";
-import CountersPage from "../counters/CounterPage/CountersPage";
-import { HomePage } from "../home/HomePage";
+import { ThemeProvider } from "@mui/material/styles";
+import { RouterProvider } from "react-router-dom";
 
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import "./styles.css";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainTemplate />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "counters",
-        element: <CountersPage />,
-      },
-    ],
-  },
-]);
+import { router } from "./router";
+import { theme } from "./theme";
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
