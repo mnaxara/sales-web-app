@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Card } from "./styles";
 
-import { useCounter } from "../../hooks";
+import { useCounter } from "../../../hooks";
 
 export default function Counter({ initialValue = 0, step = 1 }) {
   const [counter, { increment, decrement }] = useCounter(initialValue, step);

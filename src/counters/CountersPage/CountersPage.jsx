@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { Counter } from "../Counter";
+import { Counter } from "../../ds/organisms/Counter";
 
 export default function CountersPage() {
   return (
