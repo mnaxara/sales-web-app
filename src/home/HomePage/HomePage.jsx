@@ -8,7 +8,7 @@ import { ProductDescription } from "../ProductDescription";
 import { useProducts } from "../../hooks";
 
 export default function HomePage() {
-  const { products } = useProducts();
+  const { isLoading, data: products } = useProducts();
 
   const productsColumns = [
     {
@@ -39,13 +39,15 @@ export default function HomePage() {
   ];
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <DataGrid
-        rows={products}
-        columns={productsColumns}
-        disableRowSelectionOnClick
-        autoHeight
-      />
-    </Box>
+    !isLoading && (
+      <Box sx={{ width: "100%" }}>
+        <DataGrid
+          rows={products}
+          columns={productsColumns}
+          disableRowSelectionOnClick
+          autoHeight
+        />
+      </Box>
+    )
   );
 }

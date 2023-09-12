@@ -1,17 +1,9 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 export default function useProducts() {
-  const [products, setProducts] = useState([]);
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3100";
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const response = await fetch("http://localhost:3100/products/");
-      const data = await response.json();
-      setProducts(data);
-    };
-
-    fetchProduct();
-  }, []);
-
-  return { products };
+  return useQuery(["products"], () =>
+    fetch(`${baseUrl}/products`).then((response) => response.json()),
+  );
 }
