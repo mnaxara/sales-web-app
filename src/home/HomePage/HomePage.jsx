@@ -12,14 +12,16 @@ import { ProductCondition } from "../ProductCondition";
 import { withDataGridRow } from "../../hoc";
 import { ProductImage } from "../ProductImage";
 import { ProductDescription } from "../ProductDescription";
-import { useCondition, useProducts } from "../../hooks";
+import { useProductSearch, useProducts } from "../../hooks";
 import { FormControl } from "@mui/base";
 import { Stack } from "@mui/system";
 
 export default function HomePage() {
-  const [conditionState, setCondition] = useCondition();
+  const { conditionState, setCondition, search, setSearch } =
+    useProductSearch();
   const { isLoading, data: products } = useProducts({
     condition: conditionState,
+    search,
   });
 
   const productsColumns = [
@@ -68,7 +70,10 @@ export default function HomePage() {
           id="product-search"
           label="Recherche"
           variant="standard"
+          autoComplete="off"
           sx={{ width: "400px" }}
+          value={search}
+          onChange={setSearch}
         />
         <FormControl>
           <FormLabel id="condition-filter">Etat</FormLabel>
