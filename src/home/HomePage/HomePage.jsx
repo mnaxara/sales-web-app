@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { LinearProgress, Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { Price } from "../../ds/atoms";
 import { ProductCondition } from "../ProductCondition";
@@ -9,6 +9,10 @@ import { useProducts } from "../../hooks";
 
 export default function HomePage() {
   const { isLoading, data: products } = useProducts();
+
+  if (isLoading) {
+    return <LinearProgress />;
+  }
 
   const productsColumns = [
     {
