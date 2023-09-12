@@ -5,18 +5,18 @@ const availableCurrencies = ["EUR", "USD"];
 /**
  *
  * @param {Object} props
- * @param {number} props.value Price value
+ * @param {number} props.price Price value
  * @param {string} props.currency Currency value
  * @returns
  */
-export default function Price({ value, currency = "EUR" }) {
+export default function Price({ price, currency = "EUR" }) {
   return new Intl.NumberFormat(window.navigator.language, {
     style: "currency",
     currency,
-  }).format(value);
+  }).format(price);
 }
 
-Price.propType = {
-  value: number,
+Price.propTypes = {
+  price: number,
   currency: oneOf(availableCurrencies),
 };

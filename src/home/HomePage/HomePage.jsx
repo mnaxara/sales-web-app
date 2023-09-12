@@ -1,53 +1,33 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
-import { Price } from "../Price";
+import { Price } from "../../ds/atoms";
 import { ProductCondition } from "../ProductCondition";
+import { withDataGridRow } from "../../hoc";
+import { ProductImage } from "../ProductImage";
+import { ProductDescription } from "../ProductDescription";
 
 export default function HomePage() {
   const productsColumns = [
     {
       field: "imageUrl",
       headerName: "Illustration",
-      renderCell: ({ row }) => {
-        const { imageUrl, name } = row;
-        return <img src={imageUrl} alt={name} style={{ width: "100%" }} />;
-      },
+      renderCell: withDataGridRow(ProductImage),
     },
     {
       field: "description",
       headerName: "Description",
       flex: 1,
-      renderCell: ({ row }) => {
-        const { description, name, id } = row;
-        return (
-          <Stack>
-            <Link to={`products/${id}`}>{name}</Link>
-            <Typography
-              noWrap
-              sx={{ overflow: "hidden", textOverflow: "ellipsis" }}
-            >
-              {description}
-            </Typography>
-          </Stack>
-        );
-      },
+      renderCell: withDataGridRow(ProductDescription),
     },
     {
       field: "price",
       headerName: "Prix",
-      renderCell: ({ row }) => {
-        const { price } = row;
-        return <Price value={price} />;
-      },
+      renderCell: withDataGridRow(Price),
     },
     {
       field: "condition",
       headerName: "Etat",
-      renderCell: ({ row }) => {
-        const { condition } = row;
-        return <ProductCondition condition={condition} />;
-      },
+      renderCell: withDataGridRow(ProductCondition),
     },
     {
       field: "stock",

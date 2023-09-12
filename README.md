@@ -44,6 +44,12 @@ yarn commit
 
 ```
 /src
+    /ds     #Atomic Design approach
+        /atoms
+            index.js
+            /Price
+                ...
+
     /home
         index.js        #Use as an index file
         HomePage.jsx

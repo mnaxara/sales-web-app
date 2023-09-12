@@ -10,6 +10,6 @@ export default function ProductCondition({ condition }) {
   return condition === "used" ? "Occasion" : "Neuf";
 }
 
-ProductCondition.proptype = {
+ProductCondition.propTypes = {
   condition: oneOf(["new", "used"]),
 };
