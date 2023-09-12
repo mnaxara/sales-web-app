@@ -5,20 +5,10 @@ import { ProductCondition } from "../ProductCondition";
 import { withDataGridRow } from "../../hoc";
 import { ProductImage } from "../ProductImage";
 import { ProductDescription } from "../ProductDescription";
-import { useEffect, useState } from "react";
+import { useProducts } from "../../hooks";
 
 export default function HomePage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const response = await fetch("http://localhost:3100/products/");
-      const data = await response.json();
-      setProducts(data);
-    };
-
-    fetchProduct();
-  }, []);
+  const { products } = useProducts();
 
   const productsColumns = [
     {
