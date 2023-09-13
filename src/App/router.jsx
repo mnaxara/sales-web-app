@@ -4,6 +4,7 @@ import { HomePage } from "../home/HomePage";
 import { MainTemplate } from "../ds/templates";
 import { ProductPage } from "../products/ProductPage";
 import { ProjectsPage } from "./projects/ProjectsPage";
+import { FavoritesPage } from "../products/FavoritesPage";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "projects",
         element: <ProjectsPage />,
+      },
+      {
+        path: "favorites",
+        element: <FavoritesPage />,
       },
     ],
   },

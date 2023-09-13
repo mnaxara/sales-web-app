@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import {
   AppBar,
   Avatar,
+  Badge,
   Box,
   Container,
   IconButton,
@@ -11,13 +12,17 @@ import {
   Typography,
 } from "@mui/material";
 import { Footer, Button } from "./styles";
+import { FavoritesContext } from "../../../contexts/FavoritesContext";
 
 export default function MainTemplate() {
   const { pathname } = useLocation();
+  const { favorites } = FavoritesContext.useContext();
+  console.log("mn", favorites);
   const menu = [
     { to: "/", label: "Nos Produits" },
     { to: "/counters", label: "Counters" },
     { to: "/projects", label: "Projets" },
+    { to: "/favorites", label: "Favoris" },
   ];
 
   return (
@@ -60,9 +65,11 @@ export default function MainTemplate() {
                 onClick={() => {}}
                 sx={{ p: 0 }}
               >
-                <Avatar alt="Favorites" src="/">
-                  F
-                </Avatar>
+                <Badge badgeContent={favorites.length} color="error">
+                  <Avatar alt="Favorites" src="/">
+                    F
+                  </Avatar>
+                </Badge>
               </IconButton>
             </Box>
           </Toolbar>

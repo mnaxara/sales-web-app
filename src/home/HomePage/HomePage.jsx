@@ -7,14 +7,10 @@ import {
   Radio,
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { Price } from "../../ds/atoms";
-import { ProductCondition } from "../../products/ProductCondition";
-import { withDataGridRow } from "../../hoc";
-import { ProductImage } from "../../products/ProductImage";
-import { ProductDescription } from "../../products/ProductDescription";
 import { useProductSearch, useProducts } from "../../hooks";
 import { FormControl } from "@mui/base";
 import { Stack } from "@mui/system";
+import { productsColumns } from "../../products/productColumns";
 
 export default function HomePage() {
   const { conditionState, setCondition, search, setSearch } =
@@ -23,34 +19,6 @@ export default function HomePage() {
     condition: conditionState,
     search,
   });
-
-  const productsColumns = [
-    {
-      field: "imageUrl",
-      headerName: "Illustration",
-      renderCell: withDataGridRow(ProductImage),
-    },
-    {
-      field: "description",
-      headerName: "Description",
-      flex: 1,
-      renderCell: withDataGridRow(ProductDescription),
-    },
-    {
-      field: "price",
-      headerName: "Prix",
-      renderCell: withDataGridRow(Price),
-    },
-    {
-      field: "condition",
-      headerName: "Etat",
-      renderCell: withDataGridRow(ProductCondition),
-    },
-    {
-      field: "stock",
-      headerName: "Stock",
-    },
-  ];
 
   const conditionFilter = [
     { label: "Tous", value: "" },
