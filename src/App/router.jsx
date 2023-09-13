@@ -3,6 +3,7 @@ import { CountersPage } from "../counters/CountersPage";
 import { HomePage } from "../home/HomePage";
 import { MainTemplate } from "../ds/templates";
 import { ProductPage } from "../products/ProductPage";
+import { ProjectsPage } from "./projects/ProjectsPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <ProductPage />,
+      },
+      {
+        path: "projects",
+        element: <ProjectsPage />,
       },
     ],
   },

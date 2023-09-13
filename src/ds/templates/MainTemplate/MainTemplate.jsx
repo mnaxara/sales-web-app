@@ -17,6 +17,7 @@ export default function MainTemplate() {
   const menu = [
     { to: "/", label: "Nos Produits" },
     { to: "/counters", label: "Counters" },
+    { to: "/projects", label: "Projets" },
   ];
 
   return (
