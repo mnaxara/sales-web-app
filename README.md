@@ -67,6 +67,10 @@ yarn commit
 
 Thanks for your service
 
+## Requests
+
+To handle requests we use a proxy over [Axios](https://axios-http.com/docs/intro) named [salesHttpClient](./src/salesHttpClient/index.js)
+
 # Powered by React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

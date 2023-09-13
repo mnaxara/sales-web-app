@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { CountersPage } from "../counters/CountersPage";
 import { HomePage } from "../home/HomePage";
 import { MainTemplate } from "../ds/templates";
+import { ProductPage } from "../products/ProductPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "counters",
         element: <CountersPage />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductPage />,
       },
     ],
   },
