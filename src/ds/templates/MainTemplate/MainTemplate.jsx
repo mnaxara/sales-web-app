@@ -17,7 +17,7 @@ import { FavoritesContext } from "../../../contexts/FavoritesContext";
 export default function MainTemplate() {
   const { pathname } = useLocation();
   const { favorites } = FavoritesContext.useContext();
-  console.log("mn", favorites);
+
   const menu = [
     { to: "/", label: "Nos Produits" },
     { to: "/counters", label: "Counters" },

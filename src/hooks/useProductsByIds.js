@@ -8,6 +8,9 @@ export default function useProductsById({ ids }) {
   });
 
   return useQuery(["product", { ids }], async () => {
+    if (ids.length <= 0) {
+      return [];
+    }
     const response = await salesHttpClient.get(`products`, { params });
     return response.data;
   });
